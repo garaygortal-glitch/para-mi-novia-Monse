@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para vos 💛</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fff9c4, #ffe082);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 2.5em;
+      color: #6d4c41;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #5d4037;
+    }
+
+    .flor {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      animation: caer 5s linear infinite;
+    }
+
+    @keyframes caer {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Para el amor de mi vida 💛</h1>
+  <p>
+    No hay nada que me haga más feliz que vos.  
+    Gracias por estar, por tu sonrisa y por todo lo que sos.  
+    Te amo muchísimo princesa de mi vida, atte Lauti🌼
+  </p>
+
+  <script>
+    function crearFlor() {
+      const flor = document.createElement("div");
+      flor.classList.add("flor");
+      flor.innerText = "🌼";
+      flor.style.left = Math.random() * 100 + "vw";
+      flor.style.animationDuration = (3 + Math.random() * 5) + "s";
+      document.body.appendChild(flor);
+
+      setTimeout(() => {
+        flor.remove();
+      }, 8000);
+    }
+
+    setInterval(crearFlor, 300);
+  </script>
+
+</body>
+</html>
