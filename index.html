@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden; /* 🔥 ARREGLADO */
   background: linear-gradient(to bottom, #fff9c4, #ffe082);
 }
 
@@ -24,21 +24,25 @@ body {
   align-items: center;
   font-size: 28px;
   z-index: 10;
+  text-align: center;
+  padding: 20px;
 }
 
 /* CONTENIDO */
 #contenido {
   display: none;
   text-align: center;
+  padding-bottom: 50px;
 }
 
-/* TEXTO */
+/* TITULO */
 h1 {
   margin-top: 80px;
   font-size: 3em;
   color: #6d4c41;
 }
 
+/* TEXTO */
 p {
   font-size: 22px;
   max-width: 600px;
@@ -47,7 +51,7 @@ p {
 
 /* FOTOS */
 img {
-  width: 180px;
+  width: 200px; /* 🔥 más grandes */
   border-radius: 20px;
   margin: 10px;
   transition: 0.3s;
@@ -60,9 +64,9 @@ img:hover {
 
 /* FRASES */
 h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #6d4c41;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 /* CONTADOR */
@@ -78,6 +82,7 @@ h2 {
   top: -50px;
   font-size: 25px;
   animation: caer 6s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes caer {
@@ -90,12 +95,12 @@ h2 {
 
 <body>
 
-<!-- PANTALLA INICIAL -->
+<!-- 💌 PANTALLA INICIAL -->
 <div id="inicio" onclick="abrirCarta()">
   💌 Tocá para abrir la carta 💛
 </div>
 
-<!-- CONTENIDO -->
+<!-- 💛 CONTENIDO -->
 <div id="contenido">
 
 <h1>Para el amor de mi vida 💛</h1>
@@ -114,21 +119,21 @@ Te amo muchísimo princesa de mi vida, atte Lauti 🌼
 
 <div id="contador"></div>
 
-<h2>Te arme esta pagina porque estamos lejos y hoy no te pude llevar flores 💛</h2>
+<h2>Te armé esta página porque estamos lejos y hoy no te pude llevar flores 💛</h2>
 <h2>TE AMO MUCHO 💛</h2>
-<h2>SOS LO MEJOR QUE ME PASO Y SOS HERMOSA 💛</h2>
+<h2>SOS LO MEJOR QUE ME PASÓ Y SOS HERMOSA 💛</h2>
 
 </div>
 
 <script>
 
-/* ABRIR CARTA */
+/* 💌 ABRIR CARTA */
 function abrirCarta() {
   document.getElementById("inicio").style.display = "none";
   document.getElementById("contenido").style.display = "block";
 }
 
-/* CONTADOR */
+/* ⏳ CONTADOR */
 function actualizarContador() {
   const inicio = new Date("2025-08-07T00:00:00");
   const ahora = new Date();
@@ -143,8 +148,9 @@ function actualizarContador() {
 }
 
 setInterval(actualizarContador, 1000);
+actualizarContador(); // 🔥 IMPORTANTE
 
-/* FLORES */
+/* 🌼 FLORES */
 function crearFlor() {
   const flor = document.createElement("div");
   flor.classList.add("flor");
@@ -154,7 +160,7 @@ function crearFlor() {
   setTimeout(() => flor.remove(), 8000);
 }
 
-/* CORAZONES */
+/* 💛 CORAZONES */
 function crearCorazon() {
   const corazon = document.createElement("div");
   corazon.classList.add("corazon");
